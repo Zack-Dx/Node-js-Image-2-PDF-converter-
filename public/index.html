@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+  </head>
+  <body class="bg-white">
+    <div class="flex justify-center h-screen bg-Fuchsia-200 ">
+      <div class="w-96 m-auto text-center text-2xl font-bold">
+        <label for="formFile" class="form-label inline-block mb-2 text-pink-500"
+          >Image to PDF Converter</label
+        >
+        <form action="/converter" class="text-center"  enctype="multipart/form-data" method="post"
+        >
+          <input
+            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none bg-purple-200 border-amber-300"
+            type="file"
+            name="image"
+            id="formFile"
+            accept="image/jpeg"
+            multiple 
+           />
+          <button type="submit" class="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 mt-3">Submit Now</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
