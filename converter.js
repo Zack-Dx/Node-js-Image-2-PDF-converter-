@@ -9,6 +9,7 @@ const converter = (filepath) => {
     fs.readFileSync(`${upload_path}${filepath}`), // Buffer
   ];
 
-  imgToPDF(pages, imgToPDF.sizes.A4).pipe(fs.createWriteStream("output.pdf"));
+  return imgToPDF(pages, imgToPDF.sizes.A4);
 };
+
 module.exports = { converter };
