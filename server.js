@@ -1,13 +1,12 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 3519;
+const port = process.env.PORT || 3520;
 const path = require("path");
 const multer = require("multer");
 const upload = multer({ dest: "uploads/" });
 const { converter } = require("./converter");
 const imgToPDF = require("image-to-pdf");
 const fs = require("fs");
-// const fs = require("fs");
 const out_path = path.join(__dirname, "/output.pdf");
 app.use(express.static("./public"));
 
@@ -23,7 +22,6 @@ app.post("/converter", upload.array("image", 1), async (req, res, next) => {
   } else {
     await converter(req.files[0].filename);
     res.redirect(`http://localhost:${port}/converter`);
-    // res.sendFile(out_path)
   }
 });
 app.listen(port, () => {
